@@ -1,6 +1,4 @@
-with open("1_input.txt",'r') as f:
-    digits = list(f.read())
-    digits.remove('\n')
+digits = list(raw_input())
 
 l = len(digits)
 digits.append(digits[0])
