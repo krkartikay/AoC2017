@@ -10,8 +10,7 @@ def main():
 
 def process(inp):
     inp = inp.replace(","," ").split()
-    inp += [""] # evil hack; but why do we need it?
-    programs[inp[0]] = set(inp[2:-1])
+    programs[inp[0]] = set(inp[2:])
 
 def collect_sets():
     for key in programs:
