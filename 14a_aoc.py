@@ -62,5 +62,14 @@ def analyse_results():
 		m += l.count("1")
 		print l
 	print m
+	# out = ''
+	# for l in grid:
+	# 	for x in l:
+	# 		if x == '0':
+	# 			out += '.'
+	# 		elif x == '1':
+	# 			out += '#'
+	# 	out += '\n'
+	# print out
 
 main()
