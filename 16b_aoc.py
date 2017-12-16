@@ -31,7 +31,7 @@ def spin(x):
     a_spin(x)
 
 def partner(a,b):
-    partners.append((a,b))
+    pass
 
 def exchange(a,b):
     a_exchange(a,b)
@@ -45,13 +45,18 @@ def process(inp):
     elif inp[0]=='p':
         a,b = inp[1],inp[3]
         partner(a,b)
-    print "".join(programs)
 
 def analyse_results():
-    print "".join(programs)
-    print partners
-    for (a,b) in partners:
-        a_partner(a,b)
-    print "".join(programs)
+    perm = [ord(x)-ord('a') for x in programs]
+    # now we have list of partners and default arrangement
+    # partners do not matter for even no of iterations
+    # for (a,b) in partners:
+    #     a_partner(a,b)
+    start = range(16)
+    for i in xrange(1000):
+        for j in xrange(1000000):
+            start = [start[x] for x in perm]
+        print i/10.,"%"
+    print "".join(chr(x+ord('a')) for x in start)
 
 main()
