@@ -11,7 +11,14 @@ def process(arg):
     ports.append(tuple(int(x) for x in arg.split("/")))
 
 def solve():
-    print max(strength(bridge) for bridge in possible_bridges((0,),ports))
+    pb = possible_bridges((0,),ports)
+    print "Got possible bridges, there are %d of them."%(len(pb))
+    maxlen = max(len(b) for b in pb)
+    print "The max length is %d."%maxlen
+    lb = filter(lambda x:len(x)==maxlen, pb)
+    print "The number of bridges with length %d is %d."%(maxlen,len(lb))
+    sb = max(strength(b) for b in lb)
+    print "The strongest bridge of those has strength %d."%sb
 
 def strength(bridge):
     return 2*sum(bridge)-bridge[0]-bridge[-1]
