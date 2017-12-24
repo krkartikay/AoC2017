@@ -12,3 +12,5 @@ def process(arg):
 
 def solve(arg):
     pass
+
+main()
