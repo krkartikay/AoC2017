@@ -21,7 +21,7 @@ class List():
             else:
                 s+=" "+str(self.l[x])+" "
         s += "] (%d)"%self.skipSize
-        return s
+        return s #return the value
 
 lengths = map(int, raw_input().split(','))
 
